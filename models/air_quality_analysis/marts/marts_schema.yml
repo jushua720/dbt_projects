@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_air_quality
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('pollutants_unioned')
+    columns:
+      - name: year_sk
+        tests:
+          - not_null
+      - name: month_sk
+        tests:
+          - not_null
+      - name: day_sk
+        tests:
+          - not_null
+      - name: pollutant_sk
+        tests:
+          - not_null
+      - name: city_sk
+        tests:
+          - not_null
+      - name: aq_sk
+        tests:
+          - not_null

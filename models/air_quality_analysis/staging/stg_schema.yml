@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_pm25
+    description: >
+      gets US West Coast pm2.5 air pollution data
+
+  - name: stg_pm10
+    description: >
+      gets US West Coast pm10 air pollution data
+
+sources:
+  - name: openaq
+    description: >
+      includes data from Historical Air Quality
+      google cloud public dataset
+    schema: openaq
+    tables:
+      - name: pm25_frm_daily_summary
+      - name: pm10_daily_summary
+        columns:
+          - name: city_name
+            tests:
+              - not_null

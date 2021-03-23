@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_pollutants
+    description: >
+      includes information about pollutant name
+      and its units of measure
+    columns:
+      - name: pollutant_sk
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_air_quality_levels
+    columns:
+      - name: aq_sk
+        tests:
+          - unique
+      - name: air_quality
+        tests:
+          - accepted_values:
+              values:
+                [
+                  "Good",
+                  "Moderate",
+                  "Unhealthy",
+                  "Poor",
+                  "Very poor",
+                  "Severe",
+                  "Hazardous",
+                ]

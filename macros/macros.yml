@@ -1,0 +1,62 @@
+version: 2
+
+macros:
+  - name: test_num_of_entries
+    description: >
+      asserts if column has desired number of rows
+    docs:
+      show: true
+    arguments:
+      - name: row_count
+        type: int
+        description: number of rows the column should contain
+
+  - name: name_month
+    description: >
+      gets month's name from month number
+    docs:
+      show: true
+    arguments:
+      - name: m_num
+        type: int
+        description: month's number
+
+  - name: air_quality
+    description: >
+      estimates air quality based on air quality index
+    docs:
+      show: true
+    arguments:
+      - name: aqi
+        type: int
+        description: air quality index
+
+  - name: get_day
+    description: >
+      extracts day from a given date
+    docs:
+      show: true
+    arguments:
+      - name: date_local
+        type: date
+        description: date in format yyyymmdd
+
+  - name: get_month
+    description: >
+      extracts month from a given date
+    docs:
+      show: true
+    arguments:
+      - name: date_local
+        type: date
+        description: date in format yyyymmdd
+
+  - name: get_year
+    description: >
+      extracts year from a given date
+    docs:
+      show: true
+    arguments:
+      - name: date_local
+        type: date
+        description: date in format yyyymmdd

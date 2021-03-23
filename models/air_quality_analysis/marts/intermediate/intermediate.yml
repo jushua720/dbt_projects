@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: pollutants_unioned
+    description: >
+      includes data for both pm10 and pm25 pollutants
+    columns:
+      - name: parameter_name
+        tests:
+          - accepted_values:
+              values: ["PM10 Total 0-10um STP", "PM2.5 - Local Conditions"]

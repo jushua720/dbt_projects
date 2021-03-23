@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_states
+    description: >
+      includes information about state code and name
+
+  - name: dim_cities
+    description: >
+      includes information about city name
+    columns:
+      - name: state_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_states')
+              field: state_sk
+      - name: city_name
+        tests:
+          - distinct_entries:
+              companion_column: state_sk
